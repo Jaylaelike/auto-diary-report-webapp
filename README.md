@@ -1,5 +1,7 @@
 # Auto Diary Report web application New 2023
 
+<img width="1545" alt="Screenshot 2566-05-13 at 06 38 53" src="https://github.com/Jaylaelike/auto-diary-report-webapp/assets/20137401/af395a9c-4ffc-4dad-9f40-29bf852d1813">
+
 Auto diary report CHP Engineering Center web application New 2023 version.
 
 
