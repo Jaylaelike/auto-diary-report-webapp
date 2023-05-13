@@ -554,7 +554,9 @@ function App() {
             </span>
           </div>
           <diV></diV>
-          <p className="text-2xl">Chumphon Engineering Center </p>
+          <p className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+            Chumphon Engineering Center{" "}
+          </p>
         </div>
 
         <div className="flex flex-col space-y-10">
@@ -569,7 +571,7 @@ function App() {
 
         {/* Display the fetched data or progress indicator */}
         {fetching ? (
-          <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="justify-center">
             <CircularStatic />
           </div>
         ) : (
@@ -636,14 +638,16 @@ function App() {
           </>
         )}
         {/* Button to trigger Excel file creation */}
-        <Button
-          variant="contained"
-          onClick={handleGenerateExcel}
-          disabled={!data43 || !data44 || fetching}
-          style={{ marginTop: "16px" }}
-        >
-          Generate Excel
-        </Button>
+        <div className="justify-center">
+          <Button
+            disableElevation 
+            onClick={handleGenerateExcel}
+            disabled={!data43 || !data44 || fetching}
+            style={{ marginTop: "16px" }}
+          >
+            Generate Excel
+          </Button>
+        </div>
       </div>
     </>
   );
