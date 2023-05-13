@@ -76,7 +76,22 @@ function App() {
   const [data43, setData43] = useState(null);
   const [data44, setData44] = useState(null);
 
-  
+  const [data45, setData45] = useState(null);
+ 
+  const [data47, setData47] = useState(null);
+  // const [data48, setData48] = useState(null);
+  const [data49, setData49] = useState(null);
+  const [data50, setData50] = useState(null);
+  const [data51, setData51] = useState(null);
+  const [data52, setData52] = useState(null);
+  const [data53, setData53] = useState(null);
+  const [data54, setData54] = useState(null);
+  const [data55, setData55] = useState(null);
+  // const [data56, setData56] = useState(null);
+  const [data57, setData57] = useState(null);
+  const [data58, setData58] = useState(null);
+  const [data59, setData59] = useState(null);
+  const [data60, setData60] = useState(null);
 
   // const handleFileUpload = (event) => {
   //   const file = event.target.files[0];
@@ -157,6 +172,14 @@ function App() {
           const response14 = axios.get(
             "https://script.google.com/macros/s/AKfycbwCn90h7bXc7L_L570Fx8k_GyEhSUrzo6eKBSrMn8lwYa42EcF1okSGBYiJrkwcZCT5QQ/exec"
           );
+          //UPS_LOAD
+          const response15 = axios.get(
+            "https://script.google.com/macros/s/AKfycbwviJ3VJCyy0d1sRmOI0AfGasqkzVlEsRmoInCBwds5pvBStrJY3sE-K0JlN4TdQeg21g/exec"
+          );
+          // //SWR_CHP
+          // const response16 = axios.get(
+          //   "https://script.google.com/macros/s/AKfycbz2uX3RfbkDNguEoQN3K3aen1aM2t-GrUMEoJT-GvYqffSdVVJ0bwYm5uW5z1SHHFHaeQ/exec"
+          // );
 
           const [
             result1,
@@ -173,6 +196,8 @@ function App() {
             result12,
             result13,
             result14,
+            result15,
+            // result16
           ] = await Promise.all([
             response1,
             response2,
@@ -188,6 +213,8 @@ function App() {
             response12,
             response13,
             response14,
+            response15,
+            // response16
           ]);
 
           //IRD CHP
@@ -265,6 +292,23 @@ function App() {
           //IRD KBR
           setData43(result14.data.IRD_A_LM);
           setData44(result14.data.IRD_A_CN);
+
+          //UPS
+          setData45(result1.data.UPSRuntime); //CHP
+          setData47(result3.data.UPSRuntime); //PKK
+          setData49(result5.data.UPSRuntime); //TSK
+          setData50(result6.data.UPS_Runtime); //PHT
+          setData51(result7.data.UPS_Runtime); //KPO
+          setData52(result8.data.UPS_Runtime); //KAI
+
+          //UPS LOAD
+          setData53(result15.data.loadCHP); //CHP
+          setData54(result15.data.loadRNG); //RNG
+          setData55(result15.data.loadPKK); //PKK
+          setData57(result15.data.loadTSK); //TSK
+          setData58(result15.data.loadPHT); //PHT
+          setData59(result15.data.loadKPO); //KPO
+          setData60(result15.data.loadKAI); //KAI
 
           console.log(result1.data.IRD_A_LM);
 
@@ -519,6 +563,84 @@ function App() {
           origin: "J19",
         });
 
+        // UPS RUNTIME CHP
+        XLSX.utils.sheet_add_json(worksheet, [{ T6: data45 }], {
+          skipHeader: true,
+          origin: "T6",
+        });
+
+        // UPS RUNTIME TSK
+        XLSX.utils.sheet_add_json(worksheet, [{ T8: data49 }], {
+          skipHeader: true,
+          origin: "T8",
+        });
+
+        // UPS RUNTIME PHT
+        XLSX.utils.sheet_add_json(worksheet, [{ T9: data50 }], {
+          skipHeader: true,
+          origin: "T9",
+        });
+
+        // UPS RUNTIME KPO
+        XLSX.utils.sheet_add_json(worksheet, [{ T10: data51 }], {
+          skipHeader: true,
+          origin: "T10",
+        });
+
+        // UPS RUNTIME KAI
+        XLSX.utils.sheet_add_json(worksheet, [{ T11: data52 }], {
+          skipHeader: true,
+          origin: "T11",
+        });
+
+        // UPS RUNTIME PKK
+        XLSX.utils.sheet_add_json(worksheet, [{ T12: data47 }], {
+          skipHeader: true,
+          origin: "T12",
+        });
+
+        // UPS LOAD CHP
+        XLSX.utils.sheet_add_json(worksheet, [{ R6: data53 }], {
+          skipHeader: true,
+          origin: "R6",
+        });
+
+        // UPS LOAD RNG
+        XLSX.utils.sheet_add_json(worksheet, [{ R7: data54 }], {
+          skipHeader: true,
+          origin: "R7",
+        });
+
+        // UPS LOAD TSK
+        XLSX.utils.sheet_add_json(worksheet, [{ R8: data57 }], {
+          skipHeader: true,
+          origin: "R8",
+        });
+
+        // UPS LOAD PHT
+        XLSX.utils.sheet_add_json(worksheet, [{ R9: data58 }], {
+          skipHeader: true,
+          origin: "R9",
+        });
+
+        // UPS LOAD KPO
+        XLSX.utils.sheet_add_json(worksheet, [{ R10: data59 }], {
+          skipHeader: true,
+          origin: "R10",
+        });
+
+        // UPS LOAD KAI
+        XLSX.utils.sheet_add_json(worksheet, [{ R11: data60 }], {
+          skipHeader: true,
+          origin: "R11",
+        });
+
+        // UPS LOAD PKK
+        XLSX.utils.sheet_add_json(worksheet, [{ R12: data55 }], {
+          skipHeader: true,
+          origin: "R12",
+        });
+
         // Generate Excel file
         const excelBuffer = XLSX.write(workbook, {
           bookType: "xlsx",
@@ -581,67 +703,68 @@ function App() {
             {data2 && <div>IRD A CN CHP: {data2}</div>}
             {data3 && <div>IRD B LM CHP: {data3}</div>}
             {data4 && <div>IRD B CN CHP: {data4}</div>}
-
             {data5 && <div>IRD A LM RNG: {data5}</div>}
             {data6 && <div>IRD A CN RNG: {data6}</div>}
             {data7 && <div>IRD B LM RNG: {data7}</div>}
             {data8 && <div>IRD B CN RNG: {data8}</div>}
             {runtimeHours && <div>UPS Runtime Hours RNG: {runtimeHours}</div>}
             {runtimeMin && <div>UPS Runtime Min RNG: {runtimeMin}</div>}
-
             {data9 && <div>IRD A LM PKK: {data9}</div>}
             {data10 && <div>IRD A CN PKK: {data10}</div>}
             {data11 && <div>IRD B LM PKK: {data11}</div>}
             {data12 && <div>IRD B CN PKK: {data12}</div>}
-
             {data13 && <div>IRD A LM HUA: {data13}</div>}
             {data14 && <div>IRD A CN HUA: {data14}</div>}
             {data15 && <div>IRD B LM HUA: {data15}</div>}
             {data16 && <div>IRD B CN HUA: {data16}</div>}
-
             {data17 && <div>IRD A LM TSK: {data17}</div>}
             {data18 && <div>IRD A CN TSK: {data18}</div>}
             {data19 && <div>IRD B LM TSK: {data19}</div>}
             {data20 && <div>IRD B CN TSK: {data20}</div>}
-
             {data21 && <div>IRD A LM PHT: {data21}</div>}
             {data22 && <div>IRD A CN PHT: {data22}</div>}
-
             {data23 && <div>IRD A LM KPO: {data23}</div>}
             {data24 && <div>IRD A CN KPO: {data24}</div>}
-
             {data25 && <div>IRD A LM KAI: {data25}</div>}
             {data26 && <div>IRD A CN KAI: {data26}</div>}
-
             {data27 && <div>IRD A LM PBI: {data27}</div>}
             {data28 && <div>IRD A CN PBI: {data28}</div>}
             {data29 && <div>IRD B LM PBI: {data29}</div>}
             {data30 && <div>IRD B CN PBI: {data30}</div>}
-
             {data31 && <div>IRD A LM PNP: {data31}</div>}
             {data32 && <div>IRD A CN PNP: {data32}</div>}
-
             {data33 && <div>IRD A LM TAS: {data33}</div>}
             {data34 && <div>IRD A CN TAS: {data34}</div>}
             {data35 && <div>IRD B LM TAS: {data35}</div>}
             {data36 && <div>IRD B CN TAS: {data36}</div>}
-
             {data37 && <div>IRD A LM SWI: {data37}</div>}
             {data38 && <div>IRD A CN SWI: {data38}</div>}
-
             {data39 && <div>IRD A LM LGS: {data39}</div>}
             {data40 && <div>IRD A CN LGS: {data40}</div>}
             {data41 && <div>IRD B LM LGS: {data41}</div>}
             {data42 && <div>IRD B CN LGS: {data42}</div>}
-
             {data43 && <div>IRD A LM KBR: {data43}</div>}
             {data44 && <div>IRD A CN KBR: {data44}</div>}
+            {data45 && <div>UPS RUNTIME CHP: {data45}</div>}
+            
+            {data47 && <div>UPS RUNTIME PKK: {data47}</div>}
+            {data49 && <div>UPS RUNTIME TSK: {data49}</div>}
+            {data50 && <div>UPS RUNTIME PHT: {data50}</div>}
+            {data51 && <div>UPS RUNTIME KPO: {data51}</div>}
+            {data52 && <div>UPS RUNTIME KAI: {data52}</div>}
+            {data53 && <div>UPS LOAD CHP: {data53}</div>}
+            {data54 && <div>UPS LOAD RNG: {data54}</div>}
+            {data55 && <div>UPS LOAD PKK: {data55}</div>}
+            {data57 && <div>UPS LOAD TSK: {data57}</div>}
+            {data58 && <div>UPS LOAD PHT: {data58}</div>}
+            {data59 && <div>UPS LOAD KPO: {data59}</div>}
+            {data60 && <div>UPS LOAD KAI: {data60}</div>}
           </>
         )}
         {/* Button to trigger Excel file creation */}
         <div className="justify-center">
           <Button
-            disableElevation 
+            disableElevation
             onClick={handleGenerateExcel}
             disabled={!data43 || !data44 || fetching}
             style={{ marginTop: "16px" }}
