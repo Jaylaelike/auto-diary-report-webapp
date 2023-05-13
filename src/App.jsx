@@ -13,6 +13,11 @@ import { MuiFileInput } from "mui-file-input";
 function App() {
   //const [uploadedFile, setUploadedFile] = useState(null);
   // const [progress, setProgress] = useState(0);
+  const [runtimeHours, setRuntimeHours] = useState(null);
+  const [runtimeMin, setRuntimeMin] = useState(null);
+
+  const [fetching, setFetching] = useState(false);
+  const [file, setFile] = useState(null);
   const [data1, setData1] = useState(null);
   const [data2, setData2] = useState(null);
   const [data3, setData3] = useState(null);
@@ -71,11 +76,7 @@ function App() {
   const [data43, setData43] = useState(null);
   const [data44, setData44] = useState(null);
 
-  const [runtimeHours, setRuntimeHours] = useState(null);
-  const [runtimeMin, setRuntimeMin] = useState(null);
-
-  const [fetching, setFetching] = useState(false);
-  const [file, setFile] = useState(null);
+  
 
   // const handleFileUpload = (event) => {
   //   const file = event.target.files[0];
