@@ -324,7 +324,7 @@ function App() {
   }, [file]);
 
   const handleGenerateExcel = () => {
-    if (data43 && data44) {
+    if (data59 && data60) {
       const reader = new FileReader();
       reader.onload = (e) => {
         const data = new Uint8Array(e.target.result);
@@ -766,7 +766,7 @@ function App() {
           <Button
             disableElevation
             onClick={handleGenerateExcel}
-            disabled={!data43 || !data44 || fetching}
+            disabled={!data59 || !data60 || fetching}
             style={{ marginTop: "16px" }}
           >
             Generate Excel
