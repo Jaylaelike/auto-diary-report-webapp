@@ -939,21 +939,20 @@ function App() {
         {/* <input type="file" onChange={handleFileUpload} /> */}
 
         <div className="flex flex-col space-y-5 ">
-          <div></div>
-
+     
           <div className="text-5xl font-extrabold">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Auto Diary Report 2023
             </span>
           </div>
-          <diV></diV>
+         
           <p className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
             Chumphon Engineering Center{" "}
           </p>
         </div>
 
         <div className="flex flex-col space-y-10">
-          <div></div>
+       
           <MuiFileInput
             className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             value={file}
