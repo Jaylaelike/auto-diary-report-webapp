@@ -127,6 +127,8 @@ function App() {
   const [data77, setData77] = useState(null);
   const [data78, setData78] = useState(null);
 
+  const [data80, setData80] = useState(null);
+
   // const handleFileUpload = (event) => {
   //   const file = event.target.files[0];
   //   setUploadedFile(file);
@@ -180,38 +182,182 @@ function App() {
       `${data2}`,
       `${data3}`,
       `${data4}`,
+      `${data61}`,
+      `${data63}`,
+      `${data62}`,
+      `${data64}`,
+      `${data53}`,
+      `${data45}`
+    ),
+    createData(
+      "ระนอง",
       `${data5}`,
       `${data6}`,
       `${data7}`,
       `${data8}`,
-      `${data9}`,
-      `${data10}`
+      `${data66}`,
+      `${data67}`,
+      `${data65}`,
+      `${data68}`,
+      `${data54}`,
+      `${data80}`
     ),
-    createData("ระนอง", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("ทับสะแก", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("พะโต๊ะ", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("กะเปอร์", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("คุระบุรี", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
+    createData(
+      "ทับสะแก",
+      `${data17}`,
+      `${data18}`,
+      `${data19}`,
+      `${data20}`,
+      `${data70}`,
+      `${data71}`,
+      `${data69}`,
+      `${data72}`,
+      `${data57}`,
+      `${data49}`
+    ),
+    createData(
+      "พะโต๊ะ",
+      `${data21}`,
+      `${data22}`,
+      null,
+      null,
+      `${data73}`,
+      `${data74}`,
+      null,
+      null,
+      `${data58}`,
+      `${data50}`
+    ),
+    createData(
+      "กะเปอร์",
+      `${data23}`,
+      `${data24}`,
+      null,
+      null,
+      `${data75}`,
+      `${data76}`,
+      null,
+      null,
+      `${data59}`,
+      `${data51}`
+    ),
+    createData(
+      "คุระบุรี",
+      `${data25}`,
+      `${data26}`,
+      null,
+      null,
+      `${data77}`,
+      `${data78}`,
+      null,
+      null,
+      `${data60}`,
+      `${data52}`
+    ),
     createData(
       "ประจวบ(เขาทุ่งกระต่าย)",
-      159,
-      6.0,
-      24,
-      4.0,
-      159,
-      6.0,
-      24,
-      4.0,
-      159,
-      6.0
+      `${data9}`,
+      `${data10}`,
+      `${data11}`,
+      `${data12}`,
+      null,
+      null,
+      null,
+      null,
+      `${data55}`,
+      `${data47}`
     ),
-    createData("ท่าแซะ", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("หลังสวน", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("เพชรบุรี", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("หัวหิน", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("สวี", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("ปราณบุรี", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
-    createData("กระบุรี", 159, 6.0, 24, 4.0, 159, 6.0, 24, 4.0, 159, 6.0),
+    createData(
+      "ท่าแซะ",
+      `${data33}`,
+      `${data34}`,
+      `${data35}`,
+      `${data36}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ),
+    createData(
+      "หลังสวน",
+      `${data39}`,
+      `${data40}`,
+      `${data41}`,
+      `${data42}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ),
+    createData(
+      "เพชรบุรี",
+      `${data27}`,
+      `${data28}`,
+      `${data29}`,
+      `${data30}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ),
+    createData(
+      "หัวหิน",
+      `${data13}`,
+      `${data14}`,
+      `${data15}`,
+      `${data16}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ),
+    createData(
+      "สวี",
+      `${data37}`,
+      `${data38}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ),
+    createData(
+      "ปราณบุรี",
+      `${data31}`,
+      `${data32}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ),
+    createData(
+      "กระบุรี",
+      `${data43}`,
+      `${data44}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ),
   ];
 
   useEffect(() => {
@@ -375,6 +521,7 @@ function App() {
           //UPSRuntime RNG Convert time
           setRuntimeHours(parseInt(result2.data.UPSRuntime / 60));
           setRuntimeMin(String(result2.data.UPSRuntime - 60));
+          setData80(result2.data.UPSRuntime);
 
           //IRD PKK
           setData9(result3.data.IRD_A_LM);
@@ -939,20 +1086,18 @@ function App() {
         {/* <input type="file" onChange={handleFileUpload} /> */}
 
         <div className="flex flex-col space-y-5 ">
-     
           <div className="text-5xl font-extrabold">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Auto Diary Report 2023
             </span>
           </div>
-         
+
           <p className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
             Chumphon Engineering Center{" "}
           </p>
         </div>
 
         <div className="flex flex-col space-y-10">
-       
           <MuiFileInput
             className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
             value={file}
